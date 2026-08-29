@@ -1,0 +1,29 @@
+openapi: 3.1.0
+info:
+  title: CycleOps API
+  version: 0.1.0
+  description: Tenant-scoped circular operations API.
+servers:
+  - url: /api/v1
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      responses:
+        '200':
+          description: Service is healthy
+  /pickups:
+    get:
+      operationId: listPickups
+      parameters:
+        - in: header
+          name: X-Tenant-Id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        '200': { description: Tenant pickup page }
+  /routes:
+    get:
+      operationId: listRoutes
+      responses:
+        '200': { description: Route plan page }
