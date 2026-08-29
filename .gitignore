@@ -1,0 +1,9 @@
+/target
+.env
+.env.*
+!.env.example
+/apps/web/node_modules
+/apps/web/.svelte-kit
+/apps/web/build
+.DS_Store
+coverage/
